@@ -1,0 +1,23 @@
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+    <div>
+        <h3 class="float-md-start mb-0">Food Recipes</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="/recipes">Recipes</a>
+            <a class="nav-link" href="/new">Add Recipes</a>
+           
+            <% if (!currentUser) {%>
+            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/register">Register</a>
+
+            <% } else { %>
+
+            <a class="nav-link" href="/logout">Logout</a>
+     
+            <% } %>
+
+        </nav>
+    </div>
+</header>
+

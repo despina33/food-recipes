@@ -1,0 +1,57 @@
+<% layout("layouts/boilerplate")%>
+
+<div class="row">
+    <h1 class="text-center">Edit Recipe</h1>
+    <div class="col-6 offset-3">
+        <form action="/recipes/<%=recipe._id%>?_method=PUT" method="POST" novalidate class="validated-form" enctype="application/x-www-form-urlencoded">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="recipe[name]"
+                    value="<%=recipe.name %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="ingredients">Ingredients</label>
+                <input class="form-control" type="text" id="ingredients" name="recipe[ingredients]"
+                    value="<%=recipe.ingredients %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Images</label>
+                <input class="form-control" type="text" id="images" name="recipe[images]"
+                    value="<%=recipe.images %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <div class="input-group">
+                    
+                    <input type="text" class="form-control" id="description" aria-label="description"
+                        aria-describedby="description-label" name="recipe[description]" value="<%=recipe.description %>"
+                        required>\<div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="recipe">Recipe</label>
+                <textarea class="form-control" type="text" id="recipe" name="recipe[recipe]"
+                    required><%= recipe.recipe%></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-info">Update Recipe</button>
+            </div>
+        </form>
+
+    </div>
+</div>
